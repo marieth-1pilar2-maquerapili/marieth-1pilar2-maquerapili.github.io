@@ -5,52 +5,232 @@
   <title>Mi Página Personal</title>
   <style>
     body {
-      background-color: #fff0f5;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #4b2c5e;
+      background-color: #f8f9fa;
+      font-family: 'Courier New', monospace;
+      color: #2c3e50;
       margin: 0;
       padding: 0;
+      line-height: 1.6;
     }
 
     header {
-      background: #d8b4e2;
-      padding: 30px 20px;
-      text-align: center;
-      border-bottom: 4px solid #b96bb0;
+      background: #34495e;
+      color: white;
+      padding: 20px;
+      text-align: left;
+      border-bottom: 3px solid #2c3e50;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.5em;
+      font-size: 2em;
+      font-weight: normal;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
 
     main {
-      max-width: 800px;
-      margin: 30px auto;
-      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
     }
 
     section {
-      background: #ffffff;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-left: 6px solid #b96bb0;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      background: white;
+      padding: 25px;
+      margin-bottom: 0;
+      border: 2px solid #bdc3c7;
+      border-radius: 0;
+      box-shadow: none;
+      min-height: 200px;
+    }
+
+    section:nth-child(odd) {
+      border-left: 8px solid #e74c3c;
+    }
+
+    section:nth-child(even) {
+      border-left: 8px solid #3498db;
     }
 
     h2 {
-      margin-top: 0;
-      color: #b96bb0;
+      margin: 0 0 15px 0;
+      color: #2c3e50;
+      font-size: 1.3em;
+      text-transform: uppercase;
+      border-bottom: 2px solid #ecf0f1;
+      padding-bottom: 8px;
+      font-weight: bold;
+    }
+
+    p {
+      margin: 8px 0;
+      font-size: 0.95em;
+      text-align: justify;
+    }
+
+    strong {
+      color: #2c3e50;
+      font-weight: bold;
     }
 
     a {
-      color: #a03da0;
-      text-decoration: none;
+      color: #2980b9;
+      text-decoration: underline;
+      font-weight: normal;
     }
 
     a:hover {
-      text-decoration: underline;
+      color: #1abc9c;
+      background-color: #ecf0f1;
+      padding: 2px 4px;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto 15px auto;
+      border: 3px solid #95a5a6;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      background: #ecf0f1;
+      margin: 8px 0;
+      padding: 10px;
+      border-left: 4px solid #95a5a6;
+      font-size: 0.9em;
+    }
+
+    /* Secciones específicas con layout especial */
+    section:first-child {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      min-height: auto;
+    }
+
+    section:first-child img {
+      margin: 0;
+      flex-shrink: 0;
+    }
+
+    section:first-child div {
+      flex: 1;
+    }
+
+    /* Datos generales en formato tabla */
+    section:nth-child(2) p {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 10px;
+      margin: 5px 0;
+      padding: 8px;
+      background: #f8f9fa;
+      border-left: 3px solid #3498db;
+    }
+
+    /* Cursos en columnas */
+    section:nth-child(4) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      align-content: start;
+    }
+
+    section:nth-child(4) h2 {
+      grid-column: 1 / -1;
+    }
+
+    section:nth-child(4) p {
+      background: #e8f4f8;
+      padding: 10px;
+      margin: 5px 0;
+      border-left: 4px solid #3498db;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* Contacto en formato estructurado */
+    section:last-child p {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 12px;
+      background: #f1f2f6;
+      border: 1px solid #ddd;
+      margin: 8px 0;
+    }
+
+    section:last-child strong {
+      min-width: 140px;
+      color: #2c3e50;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      main {
+        grid-template-columns: 1fr;
+        padding: 20px 15px;
+      }
+
+      section:first-child {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      section:nth-child(2) p {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      section:nth-child(4) {
+        grid-template-columns: 1fr;
+      }
+
+      section:last-child p {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+      }
+
+      section:last-child strong {
+        min-width: auto;
+      }
+    }
+
+    /* Numeración de secciones */
+    section {
+      position: relative;
+      counter-increment: section-counter;
+    }
+
+    section::before {
+      content: counter(section-counter, decimal-leading-zero);
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      background: #2c3e50;
+      color: white;
+      padding: 5px 10px;
+      font-size: 0.8em;
+      font-weight: bold;
+    }
+
+    main {
+      counter-reset: section-counter;
     }
   </style>
 </head>
@@ -62,9 +242,11 @@
 
   <main>
     <section>
-      <h2>Sobre mí</h2>
-	<img src="fotopilar.jpeg" alt="Foto de Pilar" width="200" style="display: block; margin-bottom: 10px; border-radius: 0;">
-      <p>Hola, soy <strong>Pilar</strong>, estudiante del curso <strong>Pensamiento computacional</strong></p>
+      <img src="fotopilar.jpeg" alt="Foto de Pilar" width="200" style="display: block; margin-bottom: 10px; border-radius: 0;">
+      <div>
+        <h2>Sobre mí</h2>
+        <p>Hola, soy <strong>Pilar</strong>, estudiante del curso <strong>Pensamiento computacional</strong></p>
+      </div>
     </section>
 	
 	<section>
