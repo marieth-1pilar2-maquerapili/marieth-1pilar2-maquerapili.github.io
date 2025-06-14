@@ -1,315 +1,643 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="description" content="Página personal de Pilar Maquera, estudiante de Contabilidad, con intereses en liderazgo, marketing y desarrollo personal.">
-  <meta name="robots" content="index, follow">
-  <meta name="google-site-verification" content="TU-CODIGO-DE-GOOGLE" />
-  <link rel="canonical" href="https://marieth-1pilar2-maquerapili.github.io/">
-  <title>Mi Página Personal</title>
-  <style>
-    body {
-      background-color: #f8f9fa;
-      font-family: 'Courier New', monospace;
-      color: #2c3e50;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página personal de Pilar Maquera, estudiante de Contabilidad, con intereses en liderazgo, marketing y desarrollo personal.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://marieth-1pilar2-maquerapili.github.io/">
+    <title>Pilar Maquera - Página Personal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    header {
-      background: #34495e;
-      color: white;
-      padding: 20px;
-      text-align: left;
-      border-bottom: 3px solid #2c3e50;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --accent-color: #f093fb;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --bg-light: #f7fafc;
+            --white: #ffffff;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --border-radius: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-    header h1 {
-      margin: 0;
-      font-size: 2em;
-      font-weight: normal;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
 
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 30px 20px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    section {
-      background: white;
-      padding: 25px;
-      margin-bottom: 0;
-      border: 2px solid #bdc3c7;
-      border-radius: 0;
-      box-shadow: none;
-      min-height: 200px;
-    }
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
 
-    section:nth-child(odd) {
-      border-left: 8px solid #e74c3c;
-    }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-    section:nth-child(even) {
-      border-left: 8px solid #3498db;
-    }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-    h2 {
-      margin: 0 0 15px 0;
-      color: #2c3e50;
-      font-size: 1.3em;
-      text-transform: uppercase;
-      border-bottom: 2px solid #ecf0f1;
-      padding-bottom: 8px;
-      font-weight: bold;
-    }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
 
-    p {
-      margin: 8px 0;
-      font-size: 0.95em;
-      text-align: justify;
-    }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
 
-    strong {
-      color: #2c3e50;
-      font-weight: bold;
-    }
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
 
-    a {
-      color: #2980b9;
-      text-decoration: underline;
-      font-weight: normal;
-    }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: var(--transition);
+        }
 
-    a:hover {
-      color: #1abc9c;
-      background-color: #ecf0f1;
-      padding: 2px 4px;
-    }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
 
-    img {
-      display: block;
-      margin: 0 auto 15px auto;
-      border: 3px solid #95a5a6;
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-    }
+        /* Main Content */
+        main {
+            padding: 60px 0;
+        }
 
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+        /* Hero Section */
+        .hero {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 60px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 60px;
+            align-items: center;
+            transition: var(--transition);
+        }
 
-    li {
-      background: #ecf0f1;
-      margin: 8px 0;
-      padding: 10px;
-      border-left: 4px solid #95a5a6;
-      font-size: 0.9em;
-    }
+        .hero:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px);
+        }
 
-    /* Secciones específicas con layout especial */
-    section:first-child {
-      grid-column: 1 / -1;
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      min-height: auto;
-    }
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid var(--primary-color);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
 
-    section:first-child img {
-      margin: 0;
-      flex-shrink: 0;
-    }
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
 
-    section:first-child div {
-      flex: 1;
-    }
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-    /* Datos generales en formato tabla */
-    section:nth-child(2) p {
-      display: grid;
-      grid-template-columns: 150px 1fr;
-      gap: 10px;
-      margin: 5px 0;
-      padding: 8px;
-      background: #f8f9fa;
-      border-left: 3px solid #3498db;
-    }
+        .hero-content .subtitle {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
 
-    /* Cursos en columnas */
-    section:nth-child(4) {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-      align-content: start;
-    }
+        .hero-content .description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
 
-    section:nth-child(4) h2 {
-      grid-column: 1 / -1;
-    }
+        /* Grid Layout */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
 
-    section:nth-child(4) p {
-      background: #e8f4f8;
-      padding: 10px;
-      margin: 5px 0;
-      border-left: 4px solid #3498db;
-      text-align: center;
-      font-weight: bold;
-    }
+        /* Cards */
+        .card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
 
-    /* Contacto en formato estructurado */
-    section:last-child p {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      padding: 12px;
-      background: #f1f2f6;
-      border: 1px solid #ddd;
-      margin: 8px 0;
-    }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+        }
 
-    section:last-child strong {
-      min-width: 140px;
-      color: #2c3e50;
-    }
+        .card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-8px);
+        }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      main {
-        grid-template-columns: 1fr;
-        padding: 20px 15px;
-      }
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
 
-      section:first-child {
-        flex-direction: column;
-        text-align: center;
-      }
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--white);
+            font-size: 1.2rem;
+        }
 
-      section:nth-child(2) p {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
+        .card h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
 
-      section:nth-child(4) {
-        grid-template-columns: 1fr;
-      }
+        .card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
 
-      section:last-child p {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
-      }
+        /* Data List */
+        .data-list {
+            list-style: none;
+        }
 
-      section:last-child strong {
-        min-width: auto;
-      }
-    }
+        .data-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
 
-    /* Numeración de secciones */
-    section {
-      position: relative;
-      counter-increment: section-counter;
-    }
+        .data-item:last-child {
+            border-bottom: none;
+        }
 
-    section::before {
-      content: counter(section-counter, decimal-leading-zero);
-      position: absolute;
-      top: -1px;
-      right: -1px;
-      background: #2c3e50;
-      color: white;
-      padding: 5px 10px;
-      font-size: 0.8em;
-      font-weight: bold;
-    }
+        .data-label {
+            font-weight: 600;
+            color: var(--text-dark);
+            min-width: 120px;
+            margin-right: 20px;
+        }
 
-    main {
-      counter-reset: section-counter;
-    }
-  </style>
+        .data-value {
+            color: var(--text-light);
+        }
+
+        .data-value a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .data-value a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        /* Course Grid */
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .course-item {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: var(--white);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .course-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Links List */
+        .links-list {
+            list-style: none;
+        }
+
+        .link-item {
+            margin-bottom: 15px;
+        }
+
+        .link-item a {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            background: var(--bg-light);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        .link-item a:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            transform: translateX(5px);
+        }
+
+        .link-item i {
+            margin-right: 12px;
+            font-size: 1.1rem;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: var(--bg-light);
+            border-radius: 12px;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .contact-item i {
+            margin-right: 15px;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .contact-item:hover i {
+            color: var(--white);
+        }
+
+        .contact-item a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--white);
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .footer-content {
+            color: var(--text-light);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 40px 30px;
+                gap: 30px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 30px 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .data-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
+            .data-label {
+                min-width: auto;
+                margin-right: 0;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .card:nth-child(2) { animation-delay: 0.1s; }
+        .card:nth-child(3) { animation-delay: 0.2s; }
+        .card:nth-child(4) { animation-delay: 0.3s; }
+        .card:nth-child(5) { animation-delay: 0.4s; }
+        .card:nth-child(6) { animation-delay: 0.5s; }
+    </style>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Pilar Maquera</div>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#about">Sobre mí</a></li>
+                        <li><a href="#education">Educación</a></li>
+                        <li><a href="#interests">Intereses</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-  <header>
-    <h1>Mi Página Personal</h1>
-  </header>
+    <main>
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero" id="about">
+                <img src="fotopilar.jpeg" alt="Foto de Pilar Maquera" class="profile-image">
+                <div class="hero-content">
+                    <h1>¡Hola, soy Pilar!</h1>
+                    <p class="subtitle">Estudiante de Contabilidad & Pensamiento Computacional</p>
+                    <p class="description">
+                        Soy una estudiante que le gusta el dinero,
+						que es muy analítica con las personas ( y siempre acierta lo que presiente de esa persona) 
+						y con un gran interés de liderazgo, interesada en cómo las decisiones estratégicas 
+						impactan el crecimiento de las empresas. Le motiva aprender sobre liderazgo Además, 
+						disfruta colaborar ( muy empática)con los demás y tiene afinidad por temas como la lectura, 
+						cocinar, dormir y su debilidad es la comida( frituras).
+                    </p>
+                </div>
+            </section>
 
-  <main>
-    <section>
-      <img src="fotopilar.jpeg" alt="Foto de Pilar" width="200" style="display: block; margin-bottom: 10px; border-radius: 0;">
-      <div>
-        <h2>Sobre mí</h2>
-        <p>Hola, soy <strong>Pilar</strong>, estudiante del curso <strong>Pensamiento computacional</strong></p>
-      </div>
-    </section>
-	
-	<section>
-      <h2>Datos Generales</h2>
-      <p><strong>NOMBRE: </strong>Pilar Maquera</p>
-      <p><strong>EDAD: </strong>17</p>
-      <p><strong>CARRERA: </strong><a href="https://ucsp.edu.pe/carreras/contabilidad/" target="_blank">Contabilidad</a></p>
-      <p><strong>UNIVERSIDAD: </strong><a href="https://ucsp.edu.pe/" target="_blank">Universidad Católica San Pablo</a></p>
-      <p><strong>ESTUDIOS PREVIOS: </strong>San Ignacio de Loyola</p> 
-    </section>
-	
-	<section>
-      <h2>Breve Descripción Personal</h2>
-      <p>Hola, soy Pilar es una estudiante que le gusta el dinero, que es muy analítica con las personas 
-	  ( y siempre acierta lo que presiente de esa persona) y con un gran interés de liderazgo, interesada
-	  en cómo las decisiones estratégicas impactan el crecimiento de las empresas. Le motiva aprender sobre 
-	  liderazgo Además, disfruta colaborar ( muy empática)con los demás y tiene afinidad por temas 
-	  como la lectura, cocinar, dormir y su debilidad es la comida( frituras). </p>
-    </section>
-	
-	<section>
-      <h2>Cursos Realizados</h2>
-      <p>Liderazgo</p>
-      <p>Analisis financiero</p>
-      <p>Fundamentos de Marketing</p>
-      <p>Curso de excel</p>
-	</section>
-	
-	<section>
-      <h2>Intereses</h2>
-      <p>Aromarketing es una estrategia que utiliza aromas para influir en las emociones y decisiones de compra.
-	  Busca crear experiencias agradables y fortalecer la identidad de marca.
-       Dormir,cocinar, comer, mirar documentales.</p>
-    </section>
-	
-    <section>
-      <h2>Perfiles de mis docentes</h2>
-      <ul>
-        <li><a href="https://www.linkedin.com/in/ecuadrosv/" target="_blank">Profesor Ernesto</a></li>
-      </ul>
-	  <ul>
-        <li><a href="https://www.linkedin.com/in/fernando-alberto-lacunza-murillo-604580220/" target="_blank">Profesor Fernando</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Enlaces a mis compañeros</h2>
-      <ul>
-        <li><a href="https://astrid41.github.io/astrid.html" target="_blank">Astrid Arce</a></li>
-        
-      </ul>
-    </section>
-	<section>
-      <h2>Contacto</h2>
-     <p> <strong>Correo electrónico:</strong><a href="mailto:pilimaquera@gmail.com"> pilimaquera@gmail.com</a></p>
-      <p><strong>Teléfono: </strong>+51 931 444 078 </p>
-	  <p> <strong>link de la página: </strong><a href="https://marieth-1pilar2-maquerapili.github.io/" target="_blank">https://marieth-1pilar2-maquerapili.github.io/</a></p>
-	  
-    </section>
-  </main>
+            <!-- Content Grid -->
+            <div class="content-grid">
+                <!-- Datos Generales -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h2>Datos Generales</h2>
+                    </div>
+                    <ul class="data-list">
+                        <li class="data-item">
+                            <span class="data-label">Nombre:</span>
+                            <span class="data-value">Pilar Maquera</span>
+                        </li>
+                        <li class="data-item">
+                            <span class="data-label">Edad:</span>
+                            <span class="data-value">17 años</span>
+                        </li>
+                        <li class="data-item">
+                            <span class="data-label">Carrera:</span>
+                            <span class="data-value">
+                                <a href="https://ucsp.edu.pe/carreras/contabilidad/" target="_blank">Contabilidad</a>
+                            </span>
+                        </li>
+                        <li class="data-item">
+                            <span class="data-label">Universidad:</span>
+                            <span class="data-value">
+                                <a href="https://ucsp.edu.pe/" target="_blank">Universidad Católica San Pablo</a>
+                            </span>
+                        </li>
+                        <li class="data-item">
+                            <span class="data-label">Estudios Previos:</span>
+                            <span class="data-value">San Ignacio de Loyola</span>
+                        </li>
+                    </ul>
+                </div>
 
+                <!-- Cursos Realizados -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h2>Cursos Realizados</h2>
+                    </div>
+                    <div class="course-grid">
+                        <div class="course-item">Liderazgo</div>
+                        <div class="course-item">Análisis Financiero</div>
+                        <div class="course-item">Fundamentos de Marketing</div>
+                        <div class="course-item">Curso de Excel</div>
+                    </div>
+                </div>
+
+                <!-- Intereses -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h2>Intereses</h2>
+                    </div>
+                    <p>
+                        <strong>Aromarketing:</strong> Una estrategia fascinante que utiliza aromas para influir 
+                        en las emociones y decisiones de compra, buscando crear experiencias agradables y 
+                        fortalecer la identidad de marca.
+                    </p>
+                    <p>
+                        <strong>Actividades favoritas:</strong> Dormir, cocinar, comer (especialmente frituras), 
+                        mirar documentales y leer sobre temas de interés.
+                    </p>
+                </div>
+
+                <!-- Docentes -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h2>Perfiles de mis Docentes</h2>
+                    </div>
+                    <ul class="links-list">
+                        <li class="link-item">
+                            <a href="https://www.linkedin.com/in/ecuadrosv/" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                                Profesor Ernesto
+                            </a>
+                        </li>
+                        <li class="link-item">
+                            <a href="https://www.linkedin.com/in/fernando-alberto-lacunza-murillo-604580220/" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                                Profesor Fernando
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Compañeros -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h2>Enlaces a mis Compañeros</h2>
+                    </div>
+                    <ul class="links-list">
+                        <li class="link-item">
+                            <a href="https://astrid41.github.io/astrid.html" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                Astrid Arce
+                            </a>
+                        </li>
+			       <li class="link-item">
+                            <a href="https://melanydelca.github.io/" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                Melany Delgado
+                            </a>
+                        </li>
+			       <li class="link-item">
+                            <a href="https://claudia-flores-qbob.github.io/" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                Claudia Flores
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contacto -->
+                <div class="card" id="contact">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h2>Contacto</h2>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email:</strong>
+                                <a href="mailto:pilimaquera@gmail.com">pilimaquera@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Teléfono:</strong> +51 931 444 078
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <div>
+                                <strong>Página web:</strong>
+                                <a href="https://marieth-1pilar2-maquerapili.github.io/" target="_blank">
+                                    marieth-1pilar2-maquerapili.github.io
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>Diseñado con ❤️ para el curso de Pensamiento Computacional</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
